@@ -54,7 +54,7 @@ export const Yellow: Story = {
 /**
  * 意思決定の場で、キャンセルや取りやめなどの否定的な意思決定を行うボタンで使用します。
  *
- *　Used in decision-making situations with buttons for negative decisions such as cancel or withdraw.
+ * Used in decision-making situations with buttons for negative decisions such as cancel or withdraw.
  */
 export const Blue: Story = {
 	args: {
