@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
-// import Button from './Button.svelte';
+import { expect, fn, userEvent, waitFor, within } from '@storybook/test';
 import Button from '$lib/Button.svelte';
-import CCLVividColor from '$lib/config/config.js';
+import { CCLVividColor } from '$lib/config/config.js';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta = {
 	title: 'Example/Button',
 	component: Button,
 	tags: ['autodocs'],
-	argTypes: {
+	args: {
 		label: { control: 'text' },
 		buttonBgColor: {
 			control: { type: 'select' },
@@ -37,7 +37,21 @@ type Story = StoryObj<typeof meta>;
 export const Pink: Story = {
 	args: {
 		label: 'Strawberry Pink',
-		buttonBgColor: CCLVividColor.STRAWBERRY_PINK
+		buttonBgColor: CCLVividColor.STRAWBERRY_PINK,
+		onClick: fn()
+	},
+	play: async ({ args, canvasElement, step }) => {
+		await step('ボタンが存在するかどうかをチェックする', async () => {
+			const canvas = within(canvasElement);
+			await userEvent.click(canvas.getByRole('button'));
+		});
+
+		await step(
+			'ボタンがクリックされた時にボタンイベントが実行されるかどうかをチェックする',
+			async () => {
+				await waitFor(() => expect(args.onClick).toHaveBeenCalled);
+			}
+		);
 	}
 };
 /**

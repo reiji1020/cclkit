@@ -7,4 +7,10 @@ const CCLVividColor = {
 	SODA_BLUE: '--soda-blue'
 };
 
-export default CCLVividColor;
+const CCLPastelColor = {
+	PEACH_PINK: '--peach-pink',
+	LEMON_YELLOW: '--lemon-yellow',
+	SUGAR_BLUE: '--sugar-blue'
+};
+
+export { CCLVividColor, CCLPastelColor };
