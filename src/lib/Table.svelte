@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$lib/config/variables.css';
+	import './config/variables.css';
 	import { CCLVividColor, CCLPastelColor } from '$lib/config/config.js';
 	/**
 	 * 表の見出しデータ

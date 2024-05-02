@@ -1,5 +1,5 @@
 <script>
-    import '../lib/config/variables.css'
+    import './config/variables.css'
 </script>
 
 <header>

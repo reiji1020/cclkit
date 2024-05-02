@@ -1,5 +1,5 @@
 <script lang="ts">
-    import '$lib/config/variables.css';
+    import './config/variables.css';
     /**
      * ボタンのラベル
      */
